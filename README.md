@@ -2,7 +2,9 @@
 This is a project where I design a full admin dashboard from scratch.
 
 ### To do
-- [ ] HTML general structure
-- [ ] Header
-- [ ] Sidebar dashboard
-- [ ] Main content
+- [X] HTML general structure
+- [X] Header
+- [X] Sidebar dashboard
+- [ ] Left content
+- [ ] Right content
+- [ ] Redo header structure for better responsiveness
