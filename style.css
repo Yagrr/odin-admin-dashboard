@@ -43,6 +43,108 @@
     font-style: normal;
 }
 
+/* Small screen */
+
+@media only screen and (max-width: 1100px) {
+    .greetings, .pfp-big {
+        display: none;
+    }
+}
+/* Bell Animation */
+.icon-bell:hover {
+-webkit-animation: ring 5s .2s ease-out infinite;
+  -webkit-transform-origin: 50% 4px;
+  -moz-animation: ring 5s .2s ease-out infinite;
+  -moz-transform-origin: 50% 4px;
+  animation: ring 5s .2s ease-out infinite;
+  transform-origin: 50% 4px;
+}
+
+@-webkit-keyframes ring {
+  0% { -webkit-transform: rotateZ(0); }
+  1% { -webkit-transform: rotateZ(30deg); }
+  3% { -webkit-transform: rotateZ(-28deg); }
+  5% { -webkit-transform: rotateZ(34deg); }
+  7% { -webkit-transform: rotateZ(-32deg); }
+  9% { -webkit-transform: rotateZ(30deg); }
+  11% { -webkit-transform: rotateZ(-28deg); }
+  13% { -webkit-transform: rotateZ(26deg); }
+  15% { -webkit-transform: rotateZ(-24deg); }
+  17% { -webkit-transform: rotateZ(22deg); }
+  19% { -webkit-transform: rotateZ(-20deg); }
+  21% { -webkit-transform: rotateZ(18deg); }
+  23% { -webkit-transform: rotateZ(-16deg); }
+  25% { -webkit-transform: rotateZ(14deg); }
+  27% { -webkit-transform: rotateZ(-12deg); }
+  29% { -webkit-transform: rotateZ(10deg); }
+  31% { -webkit-transform: rotateZ(-8deg); }
+  33% { -webkit-transform: rotateZ(6deg); }
+  35% { -webkit-transform: rotateZ(-4deg); }
+  37% { -webkit-transform: rotateZ(2deg); }
+  39% { -webkit-transform: rotateZ(-1deg); }
+  41% { -webkit-transform: rotateZ(1deg); }
+
+  43% { -webkit-transform: rotateZ(0); }
+  100% { -webkit-transform: rotateZ(0); }
+}
+
+@-moz-keyframes ring {
+  0% { -moz-transform: rotate(0); }
+  1% { -moz-transform: rotate(30deg); }
+  3% { -moz-transform: rotate(-28deg); }
+  5% { -moz-transform: rotate(34deg); }
+  7% { -moz-transform: rotate(-32deg); }
+  9% { -moz-transform: rotate(30deg); }
+  11% { -moz-transform: rotate(-28deg); }
+  13% { -moz-transform: rotate(26deg); }
+  15% { -moz-transform: rotate(-24deg); }
+  17% { -moz-transform: rotate(22deg); }
+  19% { -moz-transform: rotate(-20deg); }
+  21% { -moz-transform: rotate(18deg); }
+  23% { -moz-transform: rotate(-16deg); }
+  25% { -moz-transform: rotate(14deg); }
+  27% { -moz-transform: rotate(-12deg); }
+  29% { -moz-transform: rotate(10deg); }
+  31% { -moz-transform: rotate(-8deg); }
+  33% { -moz-transform: rotate(6deg); }
+  35% { -moz-transform: rotate(-4deg); }
+  37% { -moz-transform: rotate(2deg); }
+  39% { -moz-transform: rotate(-1deg); }
+  41% { -moz-transform: rotate(1deg); }
+
+  43% { -moz-transform: rotate(0); }
+  100% { -moz-transform: rotate(0); }
+}
+
+@keyframes ring {
+  0% { transform: rotate(0); }
+  1% { transform: rotate(30deg); }
+  3% { transform: rotate(-28deg); }
+  5% { transform: rotate(34deg); }
+  7% { transform: rotate(-32deg); }
+  9% { transform: rotate(30deg); }
+  11% { transform: rotate(-28deg); }
+  13% { transform: rotate(26deg); }
+  15% { transform: rotate(-24deg); }
+  17% { transform: rotate(22deg); }
+  19% { transform: rotate(-20deg); }
+  21% { transform: rotate(18deg); }
+  23% { transform: rotate(-16deg); }
+  25% { transform: rotate(14deg); }
+  27% { transform: rotate(-12deg); }
+  29% { transform: rotate(10deg); }
+  31% { transform: rotate(-8deg); }
+  33% { transform: rotate(6deg); }
+  35% { transform: rotate(-4deg); }
+  37% { transform: rotate(2deg); }
+  39% { transform: rotate(-1deg); }
+  41% { transform: rotate(1deg); }
+
+  43% { transform: rotate(0); }
+  100% { transform: rotate(0); }
+}
+/* */
+
 body {
     font-family: "Inter";
     height: 100vh;
@@ -57,8 +159,8 @@ body {
     padding: 0;
     height: 100vh;
     width:100vw;
-    grid-template: 21% 81% / 250px 100%;
-    background-color: grey;
+    grid-template: 21% 81% / 250px 1fr 350px;
+    background-color: #E3E2F0;
 }
 
 .header {
@@ -71,12 +173,15 @@ body {
     padding-top: 0px;
 }
 
-.content {
-    grid-area: 2 / 2;
+.left-content {
+    grid-area: 2 / 2 / -1 / 3;
+    display: grid;
+    grid-template: 5% 90% 5% / 100%;
 }
 
-/* Add colorful border to left side of content-card */
-
+.right-content {
+    grid-area: 2 / 3 / -1 / 4;
+}
 
 .icon {
     width: 35px;
@@ -179,6 +284,7 @@ a:hover {
     grid-template: 30% 75% / 85%;
     gap: 10px;
     padding-bottom: 15px;
+    box-shadow: 0px 1px 6px #9897A1;
 }
 
 .header-top {
@@ -207,7 +313,7 @@ a:hover {
 /* Header style */
 
 .icon-search {
-    padding-right: 25px;
+    padding-right: 21px;
 }
 
 .searchbar {
@@ -239,16 +345,11 @@ input[type=text]:focus {
     margin-right: 15px;
     width: 28px;
     height: 28px;
-    transition: transform .1s;
-}
-
-.icon-bell:hover {
-    transform: scale(1.3);
 }
 
 .pfp {
-    height: 60px;
-    width: 60px;
+    height: 55px;
+    width: 55px;
     margin-right: 15px;
     object-fit: cover;
     justify-self: center;
@@ -312,3 +413,72 @@ a.header-button {
     text-decoration:none;
 }
 
+/* Content structure */
+
+.content-title {grid-area: 1 / 1 / 2 / 2;}
+
+
+.announce-title {grid-area: 1 / 2 / 2 / 3;}
+
+/* Right structure */
+.right-content {
+    display: grid;
+    gap: 15px;
+    padding-right: 20px;
+    margin-top: 15px;
+    margin-left: 15px;
+    grid-template: 1.5rem 300px 1.5rem 2fr / 100%;
+}
+.announce-title {grid-area: 1 / 1 / 2 / 2}
+.announce-card {grid-area: 2 / 1 / 3 / 2;}
+.trend-title {grid-area: 3 /  1  / 4 / 2;}
+.trend-cards {grid-area: 4 / 1  / 5  / 2;}
+
+/* Content styling */
+
+.left-content {
+    gap: 15px;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+
+.content-title, .announce-title, .trend-title {
+    font-size: 22px;    
+    font-weight: 600;
+}
+
+
+/* Right content */
+.announce-card, .trend-cards {
+    width: 85%;
+    padding: 20px;
+    background-color: #FBFBFB;
+    justify-self: center;
+    align-self: center;
+    border-radius: 20px;
+    box-shadow: 0px 1px 6px #9897A1;
+}
+
+.announce-card h3 {
+    font-size: 1.05rem;
+    text-wrap: nowrap;
+    margin: 0px;
+}
+
+.announce-card p {
+    width: 95%;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 0.85rem;
+    overflow: hidden;
+    text-wrap: wrap;
+    text-overflow: ellipsis;
+}
+
+.trend-cards {
+    display: grid;
+    grid-template: repeat(4, 60px) / 55px 50%;
+    grid-auto-rows: 60px;
+    grid-auto-flow: column;
+}
