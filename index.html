@@ -9,7 +9,7 @@
     <body>
         <div class="page-wrapper">
 
-            <header class="header">
+            <header class="header header-sidebarOpen" id="header">
 
                 <img src="pfp/cat1.jpg" class="pfp-big"> <!-- TO GET PFP IMAGE -->
 
@@ -39,11 +39,19 @@
 
             </header>
 
-            <nav class="sidebar">
+            <button class="sidebar-collapse" id="sidebarClose">
+                <img src="icons/window-close.svg" class="sidebar-logo sidebar-btn" id="logo-sidebarClose">
+            </button>
+
+            <button class="sidebar-open hidden" id="sidebarOpen">
+                <img src="icons/arrow-collapse-right.svg" class="sidebar-logo sidebar-btn" id="logo-sidebarOpen">
+            </button>
+
+            <nav class="sidebar" id="sidebar">
 
                 <div class="sidebar-content">
 
-                    <img src="icons/logo.svg" id="sidebar-big-logo">
+                    <img src="icons/logo.svg" class="sidebar-big-logo" id="logo-dashboard">
                     <h1 id="sidebar-title">Dashboard</h1>
 
                     <img src="icons/home.svg" class="sidebar-logo" id="logo-home">
@@ -75,61 +83,67 @@
                 </div>
             </nav>
 
-            <div class="left-content">
+            <div class="center-content-sidebarOpen" id="center-content">
                 <header class="content-title">Your projects</header>
 
-                <div class="card">
-                    <div class="card-text">
+                <div class="grid-cards">
 
-                    </div>
-                    <div class="card-icons">
+                    <div class="card">
 
-                    </div>
-                </div>
+                        <div class="card-text">
 
-                <div class="card">
-                    <div class="card-text">
-
-                    </div>
-                    <div class="card-icons">
-
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-text">
-
-                    </div>
-                    <div class="card-icons">
-
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-text">
-
-                    </div>
-                    <div class="card-icons">
-
-                    </div>
-                </div>
-
-                <div class="card"> 
-                    <div class="card-text">
-
-                    </div>
-                    <div class="card-icons">
-
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-text">
+                        </div>
                         <div class="card-icons">
 
                         </div>
                     </div>
+
+                    <div class="card">
+                        <div class="card-text">
+
+                        </div>
+                        <div class="card-icons">
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-text">
+
+                        </div>
+                        <div class="card-icons">
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-text">
+
+                        </div>
+                        <div class="card-icons">
+
+                        </div>
+                    </div>
+
+                    <div class="card"> 
+                        <div class="card-text">
+
+                        </div>
+                        <div class="card-icons">
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-text">
+                            <div class="card-icons">
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
 
             <div class="right-content">
@@ -155,19 +169,19 @@
 
                 <div class="trend-wrapper">
                     <div class="trend-cards">     
-                        <!-- Flex column .user. Use grid for wrapper-->
-                        <img src="pfp/wizard-duran-ekiz.jpg" class="pfp">
                         <img src="pfp/cat1.jpg" class="pfp">
+                        <img src="pfp/wizard-duran-ekiz.jpg" class="pfp">
                         <img src="pfp/rabbit-anna-shvets.jpg" class="pfp">
                         <img src="pfp/hoodman-harrisonhaines.jpg" class="pfp">
-                        <div class="user">
-                            <div class="atUser">@tegan</div>
-                            <div class="user-subtext">World Peace Builder</div>
-                        </div>
 
                         <div class="user">
                             <div class="atUser">@morgan</div>
                             <div class="user-subtext">Super Cool Project</div>
+                        </div>
+
+                        <div class="user">
+                            <div class="atUser">@tegan</div>
+                            <div class="user-subtext">World Peace Builder</div>
                         </div>
 
                         <div class="user">
@@ -182,5 +196,6 @@
                     </div>
                 </div>
             </div>
+            <script src="script.js"></script>
     </body>
 </html>
